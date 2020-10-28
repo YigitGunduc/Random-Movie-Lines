@@ -14,7 +14,7 @@ This project is licensed under the MIT License (see the LICENSE file for details
 """
 import os
 import random
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
 from waitress import serve
 
 app = Flask(__name__)
@@ -26,8 +26,10 @@ lines = open(movie_lines).read().split("\n")
 famous_lines = open(famous_quotes).read().split("\n")
 
 @app.route('/', methods=['GET'])
-def welcome():
-    return "Welcome to the movies API for more information and endpoints you can check out the GitHub link https://github.com/YigitGunduc/Random-Movie-Lines"
+def welcome(): 
+    randomLine = random.choice(lines)
+    famousLine = random.choice(famous_lines)
+    return render_template('index.html', randomLine=randomLine, famousLine=famousLine)
 
 @app.route('/api/v1.0/randomlines', methods=['GET'])
 def random_line():
@@ -40,5 +42,7 @@ def famous_line():
     return jsonify({'quote': randomLine})
 
 if __name__ == '__main__':
-    serve(app, host="0.0.0.0", port=8080)
+    app.run(debug=True)
+    #serve(app, host="0.0.0.0", port=8080)
     
+
