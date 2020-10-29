@@ -10,20 +10,9 @@
     <meta name="generator" content="Jekyll v4.1.1">
     <title>Random Movie Lines</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/cover/">
 
     <!-- Bootstrap core CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-
-    <!-- Favicons -->
-<link rel="apple-touch-icon" href="/docs/4.5/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-<link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-<link rel="manifest" href="/docs/4.5/assets/img/favicons/manifest.json">
-<link rel="mask-icon" href="/docs/4.5/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
-<link rel="icon" href="/docs/4.5/assets/img/favicons/favicon.ico">
-<meta name="msapplication-config" content="/docs/4.5/assets/img/favicons/browserconfig.xml">
-<meta name="theme-color" content="#563d7c">
 
 
     <style>
@@ -49,9 +38,9 @@
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="masthead mb-auto">
     <div class="inner">
-      <h3 class="masthead-brand">Random Movie Lines</h3>
+      <h3 class="masthead-brand">RandomMovieLines</h3>
       <nav class="nav nav-masthead justify-content-center">
-       <input type="button" class="btn btn-success" value="GitHub" onclick=" relocate_home()">
+       <input type="button" class="btn btn-outline-success" value="GitHub" onclick=" relocate_home()">
 
         <script>
         function relocate_home()
@@ -66,23 +55,28 @@
 
   <main role="main" class="inner cover">
     <h1 class="cover-heading">Random Movie Lines</h1>
-    <p class="lead">Welcome to the movies API for more information and endpoints you can check out the GitHub.</p>
+   
     <div class="lead", id='output'></div>
+    
+    </p>
     <script>
       function getText(){
-        location.reload()
+         location.href = "http://randommovielines.herokuapp.com/randomlines";
+      }
+    </script>
+    <script>
+      function get(){
+        location.href = "http://randommovielines.herokuapp.com/famousquotes";
       }
     </script>
     <p class="h1">
-      <input type="button" class="btn btn-primary" value="New Line" onclick="getText()">
-    </p>
-    <p>Random line = {{randomLine}}</p>
-    <p>Famous Quote = {{famousLine}}</p>
+      <input type="button" class="btn btn-outline-warning" value="Random Line" onclick="getText()">
+       <input type="button" class="btn btn-outline-primary" value="Famous Line" onclick="get()">
   </main>
 
   <footer class="mastfoot mt-auto">
     <div class="inner">
-      <p>Designed by Çınar and Yiğit.</p>
+        <p>Webapp by Yigit Gunduc and Çınar Can Barış, for more information<a href="https://github.com/YigitGunduc/Random-Movie-Lines"> GitHub</a>.</p>
     </div>
   </footer>
 </div>
