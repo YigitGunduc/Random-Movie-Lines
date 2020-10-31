@@ -2,12 +2,17 @@
 
 <h2>Project overview</h2>
 
-this project is an API with two endpoints that returns a random
-line from a movie or a famous quote from a known movie
+This project contains both a web app and API.
+API has two endpoints that return a random line from a movie or a famous quote from a known 
+movie. For non-programmers web app with its easy UI it lets you use to get a famous quote or 
+a random line easily for more information check out the links below
 
-is the live demo at : 
+See the API at: 
 - http://randommovielines.herokuapp.com//api/v1.0/randomlines
 - http://randommovielines.herokuapp.com//api/v1.0/famousquotes
+
+See the web app at : 
+- http://randommovielines.herokuapp.com/
 
 <h2>Endpoints</h2>
 
@@ -25,6 +30,7 @@ this API is easy to use only thing you have to do is send an
 HTTP request to the desired endpoint contents body will be the 
 proper response
 you can see the example form example_request.py or down below  
+
 ```python
 import requests 
 
