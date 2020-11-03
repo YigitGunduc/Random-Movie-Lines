@@ -7,7 +7,7 @@ The second endpoint is returning a famous quote form known movies
 API lives in the http://randommovielines.herokuapp.com/ URL 
 you can visit the desired endpoint and explore the API 
 
-for more information and contact you can check out my GitHub profile
+for more information and contact check out GitHub page
 GitHub : https://github.com/YigitGunduc
 
 This project is licensed under the MIT License (see the LICENSE file for details).
@@ -29,7 +29,17 @@ famous_lines = open(famous_quotes).read().split("\n")
 def welcome(): 
     randomLine = random.choice(lines)
     famousLine = random.choice(famous_lines)
-    return render_template('index.html', randomLine=randomLine, famousLine=famousLine)
+    return render_template('index.html')
+
+@app.route('/famousquotes', methods=['GET'])
+def famousquotes(): 
+    famousLine = random.choice(famous_lines)
+    return render_template('famous.html', famousLine=famousLine)
+
+@app.route('/randomlines', methods=['GET'])
+def randomLine(): 
+    randomLine = random.choice(lines)
+    return render_template('randomline.html', randomLine=randomLine)
 
 @app.route('/api/v1.0/randomlines', methods=['GET'])
 def random_line():
