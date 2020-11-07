@@ -26,7 +26,7 @@ lines = open(movie_lines).read().split("\n")
 famous_lines = open(famous_quotes).read().split("\n")
 
 @app.route('/', methods=['GET'])
-def welcome(): 
+def index(): 
     randomLine = random.choice(lines)
     famousLine = random.choice(famous_lines)
     return render_template('index.html')
